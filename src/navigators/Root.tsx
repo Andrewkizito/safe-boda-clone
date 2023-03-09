@@ -10,7 +10,10 @@ const Tab = createBottomTabNavigator();
 export default function Root() {
     return (
         <NavigationContainer>
-            <Tab.Navigator initialRouteName="Home">
+            <Tab.Navigator
+                initialRouteName="Home"
+                screenOptions={{ headerShown: false }}
+            >
                 <Tab.Screen name="Home" component={Home} />
                 <Tab.Screen name="Settings" component={Home} />
             </Tab.Navigator>
