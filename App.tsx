@@ -1,39 +1,29 @@
-// Importing core components
-import AppTheme from "./src/modules/Theme";
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
-import { Provider as PaperProvider } from "react-native-paper";
+// Importing helper modules
+import { useFonts } from "expo-font";
 
 // Importing amplify setup
 import { Authenticator } from "@aws-amplify/ui-react-native";
 import { Amplify } from "aws-amplify";
 import config from "./aws-exports";
 
+// Importing root app
+import AppRoot from "./AppRoot";
+
 // Connecting backend
 Amplify.configure(config);
 
 export default function App() {
+    const [fontsLoaded] = useFonts({
+        "Nunito": require("./assets/fonts/nunito.ttf"),
+    });
+
+    if (!fontsLoaded) {
+        return null;
+    }
+
     return (
-        <PaperProvider theme={AppTheme}>
-            <Authenticator.Provider>
-                <Authenticator>
-                    <View style={styles.container}>
-                        <Text>
-                            Open up App.js to start working on your app!
-                        </Text>
-                        <StatusBar style="auto" />
-                    </View>
-                </Authenticator>
-            </Authenticator.Provider>
-        </PaperProvider>
+        <Authenticator.Provider>
+            <AppRoot />
+        </Authenticator.Provider>
     );
 }
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        alignItems: "center",
-        backgroundColor: "#fff",
-        justifyContent: "center",
-    },
-});
