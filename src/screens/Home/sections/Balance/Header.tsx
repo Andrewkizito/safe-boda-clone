@@ -1,17 +1,13 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 // Importing helper modules
-import PropTypes from "prop-types";
-import { Dimensions, Pressable, StyleSheet, View } from "react-native";
+import { Dimensions, StyleSheet, View } from "react-native";
 
 // Importing core components
-import { Ionicons, Entypo } from "@expo/vector-icons";
+import { Ionicons } from "@expo/vector-icons";
 import { Card, Text } from "react-native-paper";
 import * as colors from "../../../../components/colors";
 
-const Header: React.FC<{ viewBalance: boolean; setViewBalance: any }> = ({
-    viewBalance,
-    setViewBalance,
-}) => {
+const Header: React.FC = () => {
     return (
         <Card.Title
             title={
@@ -29,29 +25,8 @@ const Header: React.FC<{ viewBalance: boolean; setViewBalance: any }> = ({
             subtitle={
                 <View style={styles.subtitle}>
                     <Text variant="labelLarge" style={styles.subtitleStyle}>
-                        UGX{" "}
-                        {viewBalance ? (
-                            "20,000"
-                        ) : (
-                            <Entypo
-                                name="dots-three-horizontal"
-                                size={24}
-                                color="#fff"
-                            />
-                        )}
+                        UGX 20,000
                     </Text>
-
-                    <Pressable
-                        onPress={() => setViewBalance((prev: boolean) => !prev)}
-                    >
-                        <Ionicons
-                            name={
-                                viewBalance ? "eye-off-outline" : "eye-outline"
-                            }
-                            size={20}
-                            color="#fff"
-                        />
-                    </Pressable>
                 </View>
             }
             style={styles.header}
@@ -103,10 +78,5 @@ const styles = StyleSheet.create({
         width: Dimensions.get("window").width / 4,
     },
 });
-
-Header.propTypes = {
-    viewBalance: PropTypes.bool.isRequired,
-    setViewBalance: PropTypes.func.isRequired,
-};
 
 export default Header;

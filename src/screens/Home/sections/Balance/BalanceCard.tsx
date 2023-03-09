@@ -1,5 +1,4 @@
 // Importing helper modules
-import { useState } from "react";
 
 // Importing core components
 import Header from "./Header";
@@ -8,13 +7,9 @@ import { Card } from "react-native-paper";
 import Slots from "./Slots";
 
 const BalanceCard = () => {
-    const [viewBalance, setViewBalance] = useState<boolean>(true);
-
-    console.log(viewBalance);
-
     return (
         <Card style={styles.card}>
-            <Header viewBalance={viewBalance} setViewBalance={setViewBalance} />
+            <Header />
             <Card.Content style={styles.card}>
                 <Slots />
             </Card.Content>
