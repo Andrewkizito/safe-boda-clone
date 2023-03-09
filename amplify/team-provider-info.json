@@ -1,0 +1,20 @@
+{
+  "prod": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-safeboda-prod-64344-authRole",
+      "UnauthRoleArn": "arn:aws:iam::316190357269:role/amplify-safeboda-prod-64344-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::316190357269:role/amplify-safeboda-prod-64344-authRole",
+      "Region": "eu-central-1",
+      "DeploymentBucketName": "amplify-safeboda-prod-64344-deployment",
+      "UnauthRoleName": "amplify-safeboda-prod-64344-unauthRole",
+      "StackName": "amplify-safeboda-prod-64344",
+      "StackId": "arn:aws:cloudformation:eu-central-1:316190357269:stack/amplify-safeboda-prod-64344/bceb46f0-be45-11ed-af56-0accf0899994",
+      "AmplifyAppId": "d3jy9ycy8rirrt"
+    },
+    "categories": {
+      "auth": {
+        "safeboda7e5e4139": {}
+      }
+    }
+  }
+}
