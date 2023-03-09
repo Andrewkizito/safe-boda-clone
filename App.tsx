@@ -4,10 +4,6 @@ import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
 import { Provider as PaperProvider } from "react-native-paper";
 
-// Importing redux setup
-import { Provider } from "react-redux";
-import store from "./src/context/store";
-
 // Importing amplify setup
 import { Authenticator } from "@aws-amplify/ui-react-native";
 import { Amplify } from "aws-amplify";
@@ -18,20 +14,18 @@ Amplify.configure(config);
 
 export default function App() {
     return (
-        <Provider store={store}>
-            <PaperProvider theme={AppTheme}>
-                <Authenticator.Provider>
-                    <Authenticator>
-                        <View style={styles.container}>
-                            <Text>
-                                Open up App.js to start working on your app!
-                            </Text>
-                            <StatusBar style="auto" />
-                        </View>
-                    </Authenticator>
-                </Authenticator.Provider>
-            </PaperProvider>
-        </Provider>
+        <PaperProvider theme={AppTheme}>
+            <Authenticator.Provider>
+                <Authenticator>
+                    <View style={styles.container}>
+                        <Text>
+                            Open up App.js to start working on your app!
+                        </Text>
+                        <StatusBar style="auto" />
+                    </View>
+                </Authenticator>
+            </Authenticator.Provider>
+        </PaperProvider>
     );
 }
 
