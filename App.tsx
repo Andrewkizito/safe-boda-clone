@@ -9,6 +9,7 @@ import { Provider } from "react-redux";
 import store from "./src/context/store";
 
 // Importing amplify setup
+import { Authenticator } from "@aws-amplify/ui-react-native";
 import { Amplify } from "aws-amplify";
 import config from "./aws-exports";
 
@@ -19,10 +20,16 @@ export default function App() {
     return (
         <Provider store={store}>
             <PaperProvider theme={AppTheme}>
-                <View style={styles.container}>
-                    <Text>Open up App.js to start working on your app!</Text>
-                    <StatusBar style="auto" />
-                </View>
+                <Authenticator.Provider>
+                    <Authenticator>
+                        <View style={styles.container}>
+                            <Text>
+                                Open up App.js to start working on your app!
+                            </Text>
+                            <StatusBar style="auto" />
+                        </View>
+                    </Authenticator>
+                </Authenticator.Provider>
             </PaperProvider>
         </Provider>
     );
