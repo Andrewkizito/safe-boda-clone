@@ -13,13 +13,14 @@ const Layout: React.FC<{ children: any }> = ({ children }) => {
 };
 
 Layout.propTypes = {
-    children: PropTypes.element.isRequired,
+    children: PropTypes.any.isRequired,
 };
 
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        padding: 8,
+        padding: 10,
+        paddingTop: 50,
         backgroundColor: "#fafafa",
     },
 });
