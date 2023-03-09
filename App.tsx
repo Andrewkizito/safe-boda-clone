@@ -8,6 +8,13 @@ import { Provider as PaperProvider } from "react-native-paper";
 import { Provider } from "react-redux";
 import store from "./src/context/store";
 
+// Importing amplify setup
+import { Amplify } from "aws-amplify";
+import config from "./aws-exports";
+
+// Connecting backend
+Amplify.configure(config);
+
 export default function App() {
     return (
         <Provider store={store}>
